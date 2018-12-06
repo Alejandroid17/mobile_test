@@ -44,7 +44,7 @@ export default class UserList extends React.Component {
      */
     handleSearch = inputType => event => {
         let input = event.target.value;
-        if (input.length >= 3) {
+        if (input.length >= this.props.minLengthSearch) {
             let rowsFiltered = this.filterData(input);
             this.setState({
                 numFilteredRows: rowsFiltered.length,

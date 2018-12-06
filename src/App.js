@@ -12,7 +12,8 @@ class App extends Component {
                 </div>
                 <div>
                     <UserList dataURL={dataURL}
-                              rowsPerPage={10}/>
+                              rowsPerPage={10}
+                              minLengthSearch={1}/>
                 </div>
             </div>
         );
