@@ -108,7 +108,8 @@ export default class UserList extends React.Component {
                 <Container>
                     <Row className="mb-2">
                         <Col xs={12} sm={12}>
-                            <Input placeholder="Search"
+                            <Input className="searcher"
+                                   placeholder="Search by username"
                                    onChange={this.handleSearch("search")}
                             />
                         </Col>

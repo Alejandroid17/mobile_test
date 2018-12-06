@@ -11,7 +11,8 @@ class App extends Component {
                     <h1>User in Brastlewark</h1>
                 </div>
                 <div>
-                    <UserList dataURL={dataURL} rowsPerPage={10}/>
+                    <UserList dataURL={dataURL}
+                              rowsPerPage={10}/>
                 </div>
             </div>
         );
