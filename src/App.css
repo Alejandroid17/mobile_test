@@ -1,3 +1,10 @@
 .App {
   text-align: center;
 }
+
+.user-row{
+    background-color: #d7e5e6;
+    color: black;
+    border-radius: 3px;
+}
+
