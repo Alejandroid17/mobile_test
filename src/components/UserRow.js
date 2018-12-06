@@ -1,6 +1,4 @@
 import React from 'react';
-import {faArrowCircleRight} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {Row, Col, Button} from 'reactstrap';
 
 
