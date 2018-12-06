@@ -1,8 +1,8 @@
 import React from 'react';
 import {Container, Row, Col, Button, Input} from 'reactstrap';
-import UserRow from './UserRow'
+import ItemRow from './ItemRow'
 
-export default class UserList extends React.Component {
+export default class List extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -43,7 +43,7 @@ export default class UserList extends React.Component {
     };
 
     /**
-     * Filters the rows by username.
+     * Filters the rows by item value.
      * @param input: string by which to filter the search.
      * @returns {*[]}: list of rows filtered.
      */
@@ -53,7 +53,7 @@ export default class UserList extends React.Component {
             if (row.name.toLowerCase().includes(inputLower)) {
                 return true;
             }
-            return;
+            return null;
         });
         return rowsFiltered;
     };
@@ -83,7 +83,7 @@ export default class UserList extends React.Component {
     /**
      * Change the current page.
      * @param event: event type (next or previus) to indicate if the page is changed to the next
-     *               or previus one .
+     *               or previous one .
      */
     handleChangePage = (event) => {
         let currentPage = this.state.currentPage;
@@ -98,28 +98,33 @@ export default class UserList extends React.Component {
     };
 
     /**
-     * Render the list of users.
-     * @param items: List of users.
-     * @returns {*}: List of `UserRow`components.
+     * Render the list of items.
+     * @param items: List of items.
+     * @returns {*}: List of `ItemRow`components.
      */
     renderList = (items) => {
         let initValue = this.state.currentPage * this.props.rowsPerPage;
         let finishValue = initValue + this.props.rowsPerPage;
         items = items.slice(initValue, finishValue);
         const itemList = items.map((item) => {
-            return <UserRow key={item.id} user={item}/>;
+            return <ItemRow key={item.id} item={item}/>;
         });
         return (<Container>{itemList}</Container>);
     };
 
     render() {
         return (
-            <div className="user-list-container">
+            <div className="list-container">
                 <Container>
+                    <Row className="mt-5 mb-3">
+                        <Col xs={12} sm={12}>
+                            <h2>{this.props.title}</h2>
+                        </Col>
+                    </Row>
                     <Row className="mb-2">
                         <Col xs={12} sm={12}>
                             <Input className="searcher"
-                                   placeholder="Search by username"
+                                   placeholder="Write to filter"
                                    onChange={this.handleSearch("search")}
                             />
                         </Col>
