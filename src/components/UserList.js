@@ -6,39 +6,14 @@ export default class UserList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            loaded: false,
-            elements: [],
-            rowsFiltered: [],
+            elements: props.data,
+            rowsFiltered: props.data,
             numFilteredRows: 0,
             currentPage: 0,
             hasPreviousPage: false,
-            hasNextPage: false,
+            hasNextPage: this.hasNextPage(0, props.data),
         };
-        this.readData();
     }
-
-    /**
-     * Read the data of a file.json file and prepare the elements to show in the list.
-     */
-    readData = () => {
-        fetch(this.props.dataURL)
-            .then(res => res.json())
-            .then((result) => {
-                    console.log(result);
-                    let elements = result.Brastlewark.map((data, index) => {
-                        return createData(data.id, data.name);
-                    });
-                    console.log(elements);
-                    this.setState({
-                        loaded: true,
-                        elements: elements,
-                        rowsFiltered: elements,
-                        numFilteredRows: elements.length,
-                        hasNextPage: elements.length > this.props.rowsPerPage,
-                    });
-                }
-            );
-    };
 
     /**
      * On `change` event, the rows are filtered and the status is updated.
@@ -178,7 +153,3 @@ export default class UserList extends React.Component {
         );
     }
 }
-
-const createData = (id, name) => {
-    return {id, name};
-};
