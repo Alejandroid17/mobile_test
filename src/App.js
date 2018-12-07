@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
 import LoadUserList from './components/LoadUserList';
+import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import Error404 from './components/Error404';
+import LoadUserInfo from "./components/LoadUserInfo";
 
 class App extends Component {
     constructor(props) {
@@ -13,9 +16,15 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <div>
-                    <LoadUserList dataURL={this.state.dataURL}/>
-                </div>
+                <Router>
+                    <div>
+                        <Switch>
+                            <Route exact path="/" render={() => <LoadUserList dataURL={this.state.dataURL}/>}/>
+                            <Route exact path="/user/:id" render={({match}) => <LoadUserInfo id={match.params.id} dataURL={this.state.dataURL}/>}/>
+                            <Route component={Error404}/>
+                        </Switch>
+                    </div>
+                </Router>
             </div>
         );
     }
