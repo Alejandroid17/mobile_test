@@ -19,8 +19,8 @@ class App extends Component {
                 <Router>
                     <div>
                         <Switch>
-                            <Route exact path="/" render={() => <LoadUserList dataURL={this.state.dataURL}/>}/>
-                            <Route exact path="/user/:id" render={({match}) => <LoadUserInfo id={match.params.id}
+                            <Route exact path="/(mobile_test|)" render={() => <LoadUserList dataURL={this.state.dataURL}/>}/>
+                            <Route exact path="/(mobile_test/user|user)/:id" render={({match}) => <LoadUserInfo id={match.params.id}
                                                                                              dataURL={this.state.dataURL}/>}/>
                             <Route component={Error404}/>
                         </Switch>
