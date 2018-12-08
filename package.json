@@ -2,7 +2,7 @@
   "name": "mobile_test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Alejandroid17.github.io/mobiletest/",
+  "homepage": "https://Alejandroid17.github.io/mobile_test/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.8",
     "@fortawesome/free-solid-svg-icons": "^5.5.0",
