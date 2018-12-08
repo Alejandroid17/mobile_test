@@ -2,6 +2,10 @@ import React from 'react';
 import {GridLoader} from 'react-spinners';
 import {css} from 'react-emotion';
 
+/**
+ * LoadingPanel component.
+ * Render a spinner and "Loading" message.
+ */
 export default class LoadingPanel extends React.Component {
 
     render() {
