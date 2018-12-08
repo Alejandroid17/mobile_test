@@ -5,6 +5,13 @@ import Error500 from "./Error500";
 import PropTypes from "prop-types";
 
 
+/**
+ * LoadUserList component.
+ * Get the data of the url passed and it renders the corresponding component:
+ *  - While the data is loading: LoadingPanel component.
+ *  - Error loading the datas: Error500 component.
+ *  - Datas loaded: List component.
+ */
 export default class LoadUserList extends React.Component {
     constructor(props) {
         super(props);
