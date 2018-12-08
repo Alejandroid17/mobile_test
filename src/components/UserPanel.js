@@ -28,11 +28,11 @@ export default class UserPanel extends React.Component {
                             <div className="col-sm-6">
                                 <ItemList list={userData.friends}
                                           title={"Friends"}
-                                          emptyMessage={"You do not have friends yet."}/></div>
+                                          emptyMessage={"This user not have friends yet."}/></div>
                             <div className="col-sm-6">
                                 <ItemList list={userData.professions}
                                           title={"Professions"}
-                                          emptyMessage={"You do not have professions yet."}/></div>
+                                          emptyMessage={"This user not have professions yet."}/></div>
                         </div>
                     </div>
                 </div>
