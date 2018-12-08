@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
+/**
+ * UserInfo component.
+ * Render the information of the user.
+ */
 export default class UserInfo extends React.Component {
 
     render() {
