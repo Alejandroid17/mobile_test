@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 export default class UserInfo extends React.Component {
 
@@ -26,3 +27,11 @@ export default class UserInfo extends React.Component {
         );
     }
 }
+
+UserInfo.propTypes = {
+    age: PropTypes.string,          // age => String
+    hairColor: PropTypes.string,    // hairColor => String
+    height: PropTypes.number,       // height => Number
+    weight: PropTypes.number,       // wight => Number
+};
+

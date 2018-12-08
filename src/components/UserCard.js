@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 export default class UserCard extends React.Component {
     render() {
@@ -13,3 +14,10 @@ export default class UserCard extends React.Component {
         );
     }
 }
+
+UserCard.propTypes = {
+    userData: PropTypes.shape({         // userData => Dictionary of...
+        thumbnail: PropTypes.string,    // thumbnail => String
+        name: PropTypes.string,         // name => String
+    })
+};

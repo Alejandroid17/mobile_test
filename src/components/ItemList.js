@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class ItemList extends React.Component {
 
     render() {
-        const itemList = this.props.list <= 0 ? <div>{this.props.emptyMessage}</div> : this.props.list.map((item, index) =>
-            <li key={index} className="list-group-item text-truncate">{item}</li>);
+        const itemList = this.props.list <= 0 ?
+            <div>{this.props.emptyMessage}</div> : this.props.list.map((item, index) =>
+                <li key={index} className="list-group-item text-truncate">{item}</li>);
 
         return (
             <div className="friend-list-container m-3 shadow p-3 bg-white rounded">
@@ -16,5 +18,11 @@ export default class ItemList extends React.Component {
                 </ul>
             </div>
         );
-    }
-}
+    };
+};
+
+ItemList.propTypes = {
+    emptyMessage: PropTypes.string,     // emptyMessage => String
+    list: PropTypes.array,              // list => Array
+    title: PropTypes.string,            // title => Number (required)
+};

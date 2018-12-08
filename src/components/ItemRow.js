@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Row} from 'reactstrap';
 import {Link} from 'react-router-dom'
+
 
 export default class ItemRow extends React.Component {
 
@@ -17,4 +19,11 @@ export default class ItemRow extends React.Component {
             </Row>
         );
     }
+};
+
+ItemRow.propTypes = {
+    item: PropTypes.shape({                 // item => Dictionary of ...
+        id: PropTypes.number.isRequired,    // id => Number (required)
+        name: PropTypes.string,             // name => String
+    })
 };

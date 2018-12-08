@@ -3,6 +3,7 @@ import UserCard from './UserCard';
 import ItemList from './ItemList';
 import UserInfo from './UserInfo';
 import {Link} from 'react-router-dom'
+import PropTypes from "prop-types";
 
 
 export default class UserPanel extends React.Component {
@@ -38,5 +39,13 @@ export default class UserPanel extends React.Component {
                 </div>
             </div>
         </div>)
-    }
-}
+    };
+};
+
+UserPanel.propTypes = {
+    userData: PropTypes.shape({         // userData => Dictionary of ...
+        hair_color: PropTypes.string,   // hair_color => String
+        friends: PropTypes.array,       // friends => Array
+        professions: PropTypes.array,   // professions => Array
+    })
+};

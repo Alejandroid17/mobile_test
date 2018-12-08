@@ -2,6 +2,7 @@ import React from 'react';
 import List from './List';
 import LoadingPanel from './LoadingPanel';
 import Error500 from "./Error500";
+import PropTypes from "prop-types";
 
 
 export default class LoadUserList extends React.Component {
@@ -57,3 +58,7 @@ export default class LoadUserList extends React.Component {
         );
     }
 }
+
+LoadUserList.propTypes = {
+    dataURL: PropTypes.string.isRequired,  // dataURL => String (required)
+};

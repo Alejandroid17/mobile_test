@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import UserPanel from './UserPanel';
 import LoadingPanel from './LoadingPanel';
 import Error500 from './Error500';
@@ -12,7 +13,7 @@ export default class LoadUserInfo extends React.Component {
             hasError: false,
         };
         this.readData(this.props.dataURL);
-    }
+    };
 
     /**
      * Read the data of a file.json file and prepare the elements to show in the list.
@@ -53,3 +54,8 @@ export default class LoadUserInfo extends React.Component {
         );
     }
 }
+
+LoadUserInfo.propTypes = {
+    dataURL: PropTypes.string.isRequired,   // dataURL => String (required)
+    id: PropTypes.number.isRequired,        // id => Number (required)
+};

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Container, Row, Col, Button, Input} from 'reactstrap';
 import ItemRow from './ItemRow'
+import PropTypes from "prop-types";
 
 export default class List extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ export default class List extends React.Component {
             hasPreviousPage: false,
             hasNextPage: this.hasNextPage(0, props.data),
         };
-    }
+    };
 
     /**
      * On `change` event, the rows are filtered and the status is updated.
@@ -156,5 +157,12 @@ export default class List extends React.Component {
                 </Container>
             </div>
         );
-    }
-}
+    };
+};
+
+List.propTypes = {
+    data: PropTypes.array,                          // data => Array
+    minLengthSearch: PropTypes.number.isRequired,   // minLengthSearch => Number (required)
+    rowsPerPage: PropTypes.number.isRequired,       // rowsPerPage => Number (required)
+    title: PropTypes.string,                        // title => String
+};
