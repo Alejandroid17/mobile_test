@@ -1,7 +1,7 @@
 {
   "main.css": "/mobile_test/static/css/main.5b0d7644.chunk.css",
-  "main.js": "/mobile_test/static/js/main.651a0b5d.chunk.js",
-  "main.js.map": "/mobile_test/static/js/main.651a0b5d.chunk.js.map",
+  "main.js": "/mobile_test/static/js/main.8dfc2f14.chunk.js",
+  "main.js.map": "/mobile_test/static/js/main.8dfc2f14.chunk.js.map",
   "static/css/1.d3578eb6.chunk.css": "/mobile_test/static/css/1.d3578eb6.chunk.css",
   "static/js/1.0b86ff13.chunk.js": "/mobile_test/static/js/1.0b86ff13.chunk.js",
   "static/js/1.0b86ff13.chunk.js.map": "/mobile_test/static/js/1.0b86ff13.chunk.js.map",
@@ -10,6 +10,6 @@
   "static/css/main.5b0d7644.chunk.css.map": "/mobile_test/static/css/main.5b0d7644.chunk.css.map",
   "static/css/1.d3578eb6.chunk.css.map": "/mobile_test/static/css/1.d3578eb6.chunk.css.map",
   "index.html": "/mobile_test/index.html",
-  "precache-manifest.5a61c88f8d8203fdf9470b67974a1471.js": "/mobile_test/precache-manifest.5a61c88f8d8203fdf9470b67974a1471.js",
+  "precache-manifest.5dd33c6b24fb19a8af89816af4d0bd56.js": "/mobile_test/precache-manifest.5dd33c6b24fb19a8af89816af4d0bd56.js",
   "service-worker.js": "/mobile_test/service-worker.js"
 }
