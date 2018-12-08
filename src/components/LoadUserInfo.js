@@ -57,5 +57,8 @@ export default class LoadUserInfo extends React.Component {
 
 LoadUserInfo.propTypes = {
     dataURL: PropTypes.string.isRequired,   // dataURL => String (required)
-    id: PropTypes.number.isRequired,        // id => Number (required)
+    id: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]).isRequired,                          // id => Number or String (required)
 };

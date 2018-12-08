@@ -29,7 +29,7 @@ export default class UserInfo extends React.Component {
 }
 
 UserInfo.propTypes = {
-    age: PropTypes.string,          // age => String
+    age: PropTypes.number,          // age => String
     hairColor: PropTypes.string,    // hairColor => String
     height: PropTypes.number,       // height => Number
     weight: PropTypes.number,       // wight => Number
