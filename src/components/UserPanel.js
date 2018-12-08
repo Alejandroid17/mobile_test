@@ -15,7 +15,7 @@ export default class UserPanel extends React.Component {
         const userData = this.props.userData;
         return (<div className="container-fluid">
             <div className="row">
-                <div className="col-sm-5 col-lg-5">
+                <div className="col-sm-4 col-lg-4">
                     <UserCard userData={userData}/>
                     <Link to="/">
                         <button type="button" className="btn btn-primary w-75">Go to the list!</button>
