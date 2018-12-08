@@ -6,7 +6,6 @@ export default class ItemList extends React.Component {
         const itemList = this.props.list <= 0 ? <div>{this.props.emptyMessage}</div> : this.props.list.map((item, index) =>
             <li key={index} className="list-group-item text-truncate">{item}</li>);
 
-
         return (
             <div className="friend-list-container m-3 shadow p-3 bg-white rounded">
                 <h4 className="font-weight-bold text-truncate">

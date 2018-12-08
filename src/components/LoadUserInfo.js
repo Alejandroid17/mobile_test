@@ -22,7 +22,6 @@ export default class LoadUserInfo extends React.Component {
             .then(res => res.json())
             .then((result) => {
                     let userData = result.Brastlewark[this.props.id];
-                    console.log(userData);
                     this.setState({
                         loaded: true,
                         userData: userData,

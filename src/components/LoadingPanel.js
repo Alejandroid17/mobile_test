@@ -1,6 +1,6 @@
 import React from 'react';
 import {GridLoader} from 'react-spinners';
-import { css } from 'react-emotion';
+import {css} from 'react-emotion';
 
 export default class LoadingPanel extends React.Component {
 
