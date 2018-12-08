@@ -1,6 +1,8 @@
 import React from 'react'
 import {render} from 'react-testing-library'
 import ItemList from './components/ItemList'
+import UserInfo from './components/UserInfo'
+import UserCard from './components/UserCard'
 
 
 describe("ItemList component", () => {
@@ -11,7 +13,7 @@ describe("ItemList component", () => {
             list: [],
         };
 
-        const {getByText} = render(<ItemList {...props}/>);
+        const {getByText, container} = render(<ItemList {...props}/>);
         const titleNode = getByText(props.title);
         const emptyMessageNode = getByText(props.emptyMessage);
 
@@ -35,4 +37,45 @@ describe("ItemList component", () => {
         expect(secondValue).toBeDefined();
         expect(thirdValue).toBeDefined();
     })
+});
+
+
+describe("UserInfo component", () => {
+    test("Render the information", () => {
+        let props = {
+            age: 1012,
+            hairColor: "testColor",
+            height: 1013,
+            weight: 1014,
+        };
+
+        const {getByText} = render(<UserInfo {...props}/>);
+        const ageNode = getByText((props.age).toString());
+        const hairColorNode = getByText(props.hairColor);
+        const heightNode = getByText((props.height).toString());
+        const weightNode = getByText((props.weight).toString());
+
+        expect(ageNode).toBeDefined();
+        expect(hairColorNode).toBeDefined();
+        expect(heightNode).toBeDefined();
+        expect(weightNode).toBeDefined();
+    });
+});
+
+describe("UserCard component", () => {
+    test("Render title and url image", () => {
+        let props = {
+            userData: {
+                thumbnail: "urlImage",
+                name: "TestName",
+            }
+        };
+
+        const {container, getByText} = render(<UserCard {...props}/>);
+        const thumbnailNode = container.querySelector("img.card-img-top");
+        const nameNode = getByText(props.userData.name);
+
+        expect(thumbnailNode).toBeDefined();
+        expect(nameNode).toBeDefined();
+    });
 });
