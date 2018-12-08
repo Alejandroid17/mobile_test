@@ -1,5 +1,6 @@
 import React from 'react';
 import UserPanel from './UserPanel';
+import LoadingPanel from './LoadingPanel';
 
 export default class LoadUserInfo extends React.Component {
     constructor(props) {
@@ -29,7 +30,7 @@ export default class LoadUserInfo extends React.Component {
     };
 
     render() {
-        let component = this.state.loaded ? <UserPanel userData={this.state.userData}/> : <div>Loading data</div>;
+        let component = this.state.loaded ? <UserPanel userData={this.state.userData}/> : <LoadingPanel/>;
 
         return (
             <div className="App">

@@ -1,5 +1,6 @@
 import React from 'react';
-import List from './List'
+import List from './List';
+import LoadingPanel from './LoadingPanel';
 
 export default class LoadUserList extends React.Component {
     constructor(props) {
@@ -28,16 +29,10 @@ export default class LoadUserList extends React.Component {
     };
 
     render() {
-        let component;
-        if (this.state.loaded) {
-            component = <List data={this.state.elements}
-                              title={'Users in Brastlewark'}
-                              rowsPerPage={10}
-                              minLengthSearch={1}/>
-        } else {
-            component = <div>Loading data</div>
-        }
-
+        let component = this.state.loaded ? <List data={this.state.elements}
+                                                  title={'Users in Brastlewark'}
+                                                  rowsPerPage={10}
+                                                  minLengthSearch={1}/> : <LoadingPanel/>
         return (
             <div className="App">
                 <div>
