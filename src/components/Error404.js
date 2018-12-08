@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 
-export default  class Error404 extends Component {
+/**
+ * Error 404 component.
+ */
+export default class Error404 extends Component {
     render() {
         return (
             <div className="container-fluid" style={{height: "100vh", marginTop: "25%"}}>
