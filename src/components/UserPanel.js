@@ -5,7 +5,11 @@ import UserInfo from './UserInfo';
 import {Link} from 'react-router-dom'
 import PropTypes from "prop-types";
 
-
+/**
+ * UserPanel component.
+ * Render a panel that contains the different components to display the
+ * user's information.
+ */
 export default class UserPanel extends React.Component {
     render() {
         const userData = this.props.userData;
