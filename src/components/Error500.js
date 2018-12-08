@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+/**
+ * Error 500 component.
+ */
 export default class Error500 extends Component {
     render() {
         return (
