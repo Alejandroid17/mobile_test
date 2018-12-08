@@ -1,6 +1,8 @@
 import React from 'react';
 import List from './List';
 import LoadingPanel from './LoadingPanel';
+import Error500 from "./Error500";
+
 
 export default class LoadUserList extends React.Component {
     constructor(props) {
@@ -25,16 +27,29 @@ export default class LoadUserList extends React.Component {
                         elements: elements,
                     });
                 }
-            );
+            )
+            .catch((error) => {
+                this.setState({
+                    hasError: true,
+                });
+                // Register error in some log...
+            });
     };
 
     render() {
-        let component = this.state.loaded ? <List data={this.state.elements}
-                                                  title={'Users in Brastlewark'}
-                                                  rowsPerPage={10}
-                                                  minLengthSearch={1}/> : <LoadingPanel/>
+
+        let component = <LoadingPanel/>;
+        if (this.state.hasError) {
+            component = <Error500/>;
+        } else if (this.state.loaded) {
+            component = <List data={this.state.elements}
+                              title={'Users in Brastlewark'}
+                              rowsPerPage={10}
+                              minLengthSearch={1}/>;
+        }
+
         return (
-            <div className="App">
+            <div>
                 <div>
                     {component}
                 </div>

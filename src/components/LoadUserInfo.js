@@ -1,6 +1,7 @@
 import React from 'react';
 import UserPanel from './UserPanel';
 import LoadingPanel from './LoadingPanel';
+import Error500 from './Error500';
 
 export default class LoadUserInfo extends React.Component {
     constructor(props) {
@@ -8,6 +9,7 @@ export default class LoadUserInfo extends React.Component {
         this.state = {
             loaded: false,
             userData: null,
+            hasError: false,
         };
         this.readData(this.props.dataURL);
     }
@@ -26,14 +28,25 @@ export default class LoadUserInfo extends React.Component {
                         userData: userData,
                     });
                 }
-            );
+            )
+            .catch((error) => {
+                this.setState({
+                    hasError: true,
+                });
+                // Register error in some log...
+            });
     };
 
     render() {
-        let component = this.state.loaded ? <UserPanel userData={this.state.userData}/> : <LoadingPanel/>;
+        let component = <LoadingPanel/>;
+        if (this.state.hasError) {
+            component = <Error500/>;
+        } else if (this.state.loaded) {
+            component = <UserPanel userData={this.state.userData}/>;
+        }
 
         return (
-            <div className="App">
+            <div>
                 <div>
                     {component}
                 </div>

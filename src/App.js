@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import LoadUserList from './components/LoadUserList';
-import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Error404 from './components/Error404';
 import LoadUserInfo from "./components/LoadUserInfo";
 
