@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
+
+/**
+ * UserCard component.
+ * Render the thumbnail and username.
+ */
 export default class UserCard extends React.Component {
     render() {
         let user = this.props.userData;
