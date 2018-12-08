@@ -118,7 +118,7 @@ export default class List extends React.Component {
                 <Container>
                     <Row className="mt-5 mb-3">
                         <Col xs={12} sm={12}>
-                            <h2>{this.props.title}</h2>
+                            <h1 className="display-4 font-weight-bold">{this.props.title}</h1>
                         </Col>
                     </Row>
                     <Row className="mb-2">
