@@ -4,6 +4,13 @@ import UserPanel from './UserPanel';
 import LoadingPanel from './LoadingPanel';
 import Error500 from './Error500';
 
+/**
+ * LoadUserInfo component.
+ * Get the data of the url passed and it renders the corresponding component:
+ *  - While the data is loading: LoadingPanel component.
+ *  - Error loading the datas: Error500 component.
+ *  - Datas loaded: UserPanel component.
+ */
 export default class LoadUserInfo extends React.Component {
     constructor(props) {
         super(props);
